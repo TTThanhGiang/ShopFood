@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbFoodyModelStoreContainer" CdmEntityContainer="dbFoodyEntities">
+    <EntitySetMapping Name="tbAdmin">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbAdmin">
+        <MappingFragment StoreEntitySet="tbAdmin">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenadmin" ColumnName="tenadmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbChiTietDonHang">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbChiTietDonHang">
+        <MappingFragment StoreEntitySet="tbChiTietDonHang">
+          <ScalarProperty Name="mactdh" ColumnName="mactdh" />
+          <ScalarProperty Name="madh" ColumnName="madh" />
+          <ScalarProperty Name="mamon" ColumnName="mamon" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDanhGia">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbDanhGia">
+        <MappingFragment StoreEntitySet="tbDanhGia">
+          <ScalarProperty Name="madg" ColumnName="madg" />
+          <ScalarProperty Name="mactdh" ColumnName="mactdh" />
+          <ScalarProperty Name="diemdanhgia" ColumnName="diemdanhgia" />
+          <ScalarProperty Name="nhanxet" ColumnName="nhanxet" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDanhMuc">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbDanhMuc">
+        <MappingFragment StoreEntitySet="tbDanhMuc">
+          <ScalarProperty Name="madanhmuc" ColumnName="madanhmuc" />
+          <ScalarProperty Name="tendanhmuc" ColumnName="tendanhmuc" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDonHang">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbDonHang">
+        <MappingFragment StoreEntitySet="tbDonHang">
+          <ScalarProperty Name="phidichvu" ColumnName="phidichvu" />
+          <ScalarProperty Name="madh" ColumnName="madh" />
+          <ScalarProperty Name="maquan" ColumnName="maquan" />
+          <ScalarProperty Name="mattdh" ColumnName="mattdh" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="hinhthucthanhtoan" ColumnName="hinhthucthanhtoan" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="makhuyenmai" ColumnName="makhuyenmai" />
+          <ScalarProperty Name="phiship" ColumnName="phiship" />
+          <ScalarProperty Name="ngaygiaohang" ColumnName="ngaygiaohang" />
+          <ScalarProperty Name="ngaythanhtoan" ColumnName="ngaythanhtoan" />
+          <ScalarProperty Name="mashipper" ColumnName="mashipper" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbKhachHang">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbKhachHang">
+        <MappingFragment StoreEntitySet="tbKhachHang">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbKhuyenMai">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbKhuyenMai">
+        <MappingFragment StoreEntitySet="tbKhuyenMai">
+          <ScalarProperty Name="phantramgiam" ColumnName="phantramgiam" />
+          <ScalarProperty Name="makm" ColumnName="makm" />
+          <ScalarProperty Name="tenkm" ColumnName="tenkm" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="loaikm" ColumnName="loaikm" />
+          <ScalarProperty Name="dieukien" ColumnName="dieukien" />
+          <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />
+          <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbLoaiHinhThanhToan">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbLoaiHinhThanhToan">
+        <MappingFragment StoreEntitySet="tbLoaiHinhThanhToan">
+          <ScalarProperty Name="mahttt" ColumnName="mahttt" />
+          <ScalarProperty Name="tenhinhthuc" ColumnName="tenhinhthuc" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMonAn">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbMonAn">
+        <MappingFragment StoreEntitySet="tbMonAn">
+          <ScalarProperty Name="mamon" ColumnName="mamon" />
+          <ScalarProperty Name="tenmon" ColumnName="tenmon" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="giatien" ColumnName="giatien" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+          <ScalarProperty Name="maquanan" ColumnName="maquanan" />
+          <ScalarProperty Name="madanhmuc" ColumnName="madanhmuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMonAnKhuyenMai">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbMonAnKhuyenMai">
+        <MappingFragment StoreEntitySet="tbMonAnKhuyenMai">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="makm" ColumnName="makm" />
+          <ScalarProperty Name="mamon" ColumnName="mamon" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+          <ScalarProperty Name="phantramgiam" ColumnName="phantramgiam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuanAn">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbQuanAn">
+        <MappingFragment StoreEntitySet="tbQuanAn">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenquanan" ColumnName="tenquanan" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="toado" ColumnName="toado" />
+          <ScalarProperty Name="soluotdanhgia" ColumnName="soluotdanhgia" />
+          <ScalarProperty Name="diemdanhgia" ColumnName="diemdanhgia" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbShipper">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbShipper">
+        <MappingFragment StoreEntitySet="tbShipper">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="tenshipper" ColumnName="tenshipper" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="toado" ColumnName="toado" />
+          <ScalarProperty Name="diemdanhgia" ColumnName="diemdanhgia" />
+          <ScalarProperty Name="soluotdanhgia" ColumnName="soluotdanhgia" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTinNhan">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbTinNhan">
+        <MappingFragment StoreEntitySet="tbTinNhan">
+          <ScalarProperty Name="matn" ColumnName="matn" />
+          <ScalarProperty Name="madh" ColumnName="madh" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="mashipper" ColumnName="mashipper" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbThongTinDatHang">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbThongTinDatHang">
+        <MappingFragment StoreEntitySet="tbThongTinDatHang">
+          <ScalarProperty Name="mattdh" ColumnName="mattdh" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="toado" ColumnName="toado" />
+          <ScalarProperty Name="tennguoinhan" ColumnName="tennguoinhan" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUser">
+      <EntityTypeMapping TypeName="dbFoodyModel.tbUser">
+        <MappingFragment StoreEntitySet="tbUser">
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="loaitaikhoan" ColumnName="loaitaikhoan" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="vitien" ColumnName="vitien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

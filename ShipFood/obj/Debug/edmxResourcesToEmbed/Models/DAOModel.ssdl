@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbFoodyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbAdmin">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="tenadmin" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbChiTietDonHang">
+    <Key>
+      <PropertyRef Name="mactdh" />
+    </Key>
+    <Property Name="mactdh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="madh" Type="int" />
+    <Property Name="mamon" Type="int" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="dongia" Type="money" />
+  </EntityType>
+  <EntityType Name="tbDanhGia">
+    <Key>
+      <PropertyRef Name="madg" />
+    </Key>
+    <Property Name="madg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mactdh" Type="int" />
+    <Property Name="diemdanhgia" Type="int" />
+    <Property Name="nhanxet" Type="nvarchar" MaxLength="500" />
+    <Property Name="hinhanh" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbDanhMuc">
+    <Key>
+      <PropertyRef Name="madanhmuc" />
+    </Key>
+    <Property Name="madanhmuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tendanhmuc" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mota" Type="nvarchar" MaxLength="250" />
+    <Property Name="hinhanh" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbDonHang">
+    <Key>
+      <PropertyRef Name="madh" />
+    </Key>
+    <Property Name="madh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maquan" Type="int" />
+    <Property Name="mattdh" Type="int" />
+    <Property Name="ngaydathang" Type="datetime" />
+    <Property Name="trangthai" Type="nvarchar" MaxLength="50" />
+    <Property Name="tongtien" Type="money" />
+    <Property Name="hinhthucthanhtoan" Type="int" />
+    <Property Name="ghichu" Type="nvarchar" MaxLength="200" />
+    <Property Name="makhuyenmai" Type="int" />
+    <Property Name="phiship" Type="money" />
+    <Property Name="phidichvu" Type="money" />
+    <Property Name="ngaygiaohang" Type="datetime" />
+    <Property Name="ngaythanhtoan" Type="datetime" />
+    <Property Name="mashipper" Type="int" />
+  </EntityType>
+  <EntityType Name="tbKhachHang">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="tenkh" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbKhuyenMai">
+    <Key>
+      <PropertyRef Name="makm" />
+    </Key>
+    <Property Name="makm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenkm" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mota" Type="nvarchar" MaxLength="500" />
+    <Property Name="loaikm" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="phantramgiam" Type="int" />
+    <Property Name="dieukien" Type="nvarchar" MaxLength="500" />
+    <Property Name="ngaybatdau" Type="datetime" />
+    <Property Name="ngayketthuc" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbLoaiHinhThanhToan">
+    <Key>
+      <PropertyRef Name="mahttt" />
+    </Key>
+    <Property Name="mahttt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenhinhthuc" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mota" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbMonAn">
+    <Key>
+      <PropertyRef Name="mamon" />
+    </Key>
+    <Property Name="mamon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenmon" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mota" Type="nvarchar" MaxLength="500" />
+    <Property Name="giatien" Type="money" />
+    <Property Name="hinhanh" Type="varchar" MaxLength="50" />
+    <Property Name="maquanan" Type="int" />
+    <Property Name="madanhmuc" Type="int" />
+  </EntityType>
+  <EntityType Name="tbMonAnKhuyenMai">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makm" Type="int" />
+    <Property Name="mamon" Type="int" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="trangthai" Type="nvarchar" MaxLength="50" />
+    <Property Name="phantramgiam" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbQuanAn">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="tenquanan" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="toado" Type="geography" />
+    <Property Name="soluotdanhgia" Type="int" />
+    <Property Name="diemdanhgia" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="trangthai" Type="nvarchar" MaxLength="50" />
+    <Property Name="hinhanh" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbShipper">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="tenshipper" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="toado" Type="geography" />
+    <Property Name="diemdanhgia" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="soluotdanhgia" Type="int" />
+    <Property Name="trangthai" Type="nvarchar" MaxLength="50" />
+    <Property Name="hinhanh" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbTinNhan">
+    <Key>
+      <PropertyRef Name="matn" />
+    </Key>
+    <Property Name="matn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="madh" Type="int" />
+    <Property Name="noidung" Type="nvarchar" MaxLength="500" />
+    <Property Name="mashipper" Type="int" />
+    <Property Name="makh" Type="int" />
+  </EntityType>
+  <EntityType Name="tbThongTinDatHang">
+    <Key>
+      <PropertyRef Name="mattdh" />
+    </Key>
+    <Property Name="mattdh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sdt" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="toado" Type="geography" Nullable="false" />
+    <Property Name="tennguoinhan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="userid" Type="int" />
+  </EntityType>
+  <EntityType Name="tbUser">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="loaitaikhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sdt" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="vitien" Type="money" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="trangthai" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tbAdmin__userid__7E37BEF6">
+    <End Role="tbUser" Type="Self.tbUser" Multiplicity="1" />
+    <End Role="tbAdmin" Type="Self.tbAdmin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbUser">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbAdmin">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbChiTiet__mamon__6FE99F9F">
+    <End Role="tbMonAn" Type="Self.tbMonAn" Multiplicity="0..1" />
+    <End Role="tbChiTietDonHang" Type="Self.tbChiTietDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMonAn">
+        <PropertyRef Name="mamon" />
+      </Principal>
+      <Dependent Role="tbChiTietDonHang">
+        <PropertyRef Name="mamon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbChiTietD__madh__6EF57B66">
+    <End Role="tbDonHang" Type="Self.tbDonHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbChiTietDonHang" Type="Self.tbChiTietDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDonHang">
+        <PropertyRef Name="madh" />
+      </Principal>
+      <Dependent Role="tbChiTietDonHang">
+        <PropertyRef Name="madh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDanhGia__mactd__7B5B524B">
+    <End Role="tbChiTietDonHang" Type="Self.tbChiTietDonHang" Multiplicity="0..1" />
+    <End Role="tbDanhGia" Type="Self.tbDanhGia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbChiTietDonHang">
+        <PropertyRef Name="mactdh" />
+      </Principal>
+      <Dependent Role="tbDanhGia">
+        <PropertyRef Name="mactdh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDonHang__hinht__5BE2A6F2">
+    <End Role="tbLoaiHinhThanhToan" Type="Self.tbLoaiHinhThanhToan" Multiplicity="0..1" />
+    <End Role="tbDonHang" Type="Self.tbDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLoaiHinhThanhToan">
+        <PropertyRef Name="mahttt" />
+      </Principal>
+      <Dependent Role="tbDonHang">
+        <PropertyRef Name="hinhthucthanhtoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDonHang__makhu__5CD6CB2B">
+    <End Role="tbKhuyenMai" Type="Self.tbKhuyenMai" Multiplicity="0..1" />
+    <End Role="tbDonHang" Type="Self.tbDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKhuyenMai">
+        <PropertyRef Name="makm" />
+      </Principal>
+      <Dependent Role="tbDonHang">
+        <PropertyRef Name="makhuyenmai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDonHang__maqua__59063A47">
+    <End Role="tbQuanAn" Type="Self.tbQuanAn" Multiplicity="0..1" />
+    <End Role="tbDonHang" Type="Self.tbDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuanAn">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbDonHang">
+        <PropertyRef Name="maquan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDonHang__mashi__5DCAEF64">
+    <End Role="tbShipper" Type="Self.tbShipper" Multiplicity="0..1" />
+    <End Role="tbDonHang" Type="Self.tbDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbShipper">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbDonHang">
+        <PropertyRef Name="mashipper" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbDonHang__mattd__59FA5E80">
+    <End Role="tbThongTinDatHang" Type="Self.tbThongTinDatHang" Multiplicity="0..1" />
+    <End Role="tbDonHang" Type="Self.tbDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbThongTinDatHang">
+        <PropertyRef Name="mattdh" />
+      </Principal>
+      <Dependent Role="tbDonHang">
+        <PropertyRef Name="mattdh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbKhachHa__useri__4D94879B">
+    <End Role="tbUser" Type="Self.tbUser" Multiplicity="1" />
+    <End Role="tbKhachHang" Type="Self.tbKhachHang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbUser">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbKhachHang">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMonAn__madanhm__6C190EBB">
+    <End Role="tbDanhMuc" Type="Self.tbDanhMuc" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbMonAn" Type="Self.tbMonAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDanhMuc">
+        <PropertyRef Name="madanhmuc" />
+      </Principal>
+      <Dependent Role="tbMonAn">
+        <PropertyRef Name="madanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMonAn__maquana__6B24EA82">
+    <End Role="tbQuanAn" Type="Self.tbQuanAn" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbMonAn" Type="Self.tbMonAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuanAn">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbMonAn">
+        <PropertyRef Name="maquanan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMonAnKh__mamon__75A278F5">
+    <End Role="tbMonAn" Type="Self.tbMonAn" Multiplicity="0..1" />
+    <End Role="tbMonAnKhuyenMai" Type="Self.tbMonAnKhuyenMai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMonAn">
+        <PropertyRef Name="mamon" />
+      </Principal>
+      <Dependent Role="tbMonAnKhuyenMai">
+        <PropertyRef Name="mamon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbMonAnKhu__makm__74AE54BC">
+    <End Role="tbKhuyenMai" Type="Self.tbKhuyenMai" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbMonAnKhuyenMai" Type="Self.tbMonAnKhuyenMai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKhuyenMai">
+        <PropertyRef Name="makm" />
+      </Principal>
+      <Dependent Role="tbMonAnKhuyenMai">
+        <PropertyRef Name="makm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbQuanAn__userid__46E78A0C">
+    <End Role="tbUser" Type="Self.tbUser" Multiplicity="1" />
+    <End Role="tbQuanAn" Type="Self.tbQuanAn" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbUser">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbQuanAn">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbShipper__useri__403A8C7D">
+    <End Role="tbUser" Type="Self.tbUser" Multiplicity="1" />
+    <End Role="tbShipper" Type="Self.tbShipper" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbUser">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbShipper">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbTinNhan__madh__6383C8BA">
+    <End Role="tbDonHang" Type="Self.tbDonHang" Multiplicity="0..1" />
+    <End Role="tbTinNhan" Type="Self.tbTinNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDonHang">
+        <PropertyRef Name="madh" />
+      </Principal>
+      <Dependent Role="tbTinNhan">
+        <PropertyRef Name="madh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbTinNhan__makh__656C112C">
+    <End Role="tbKhachHang" Type="Self.tbKhachHang" Multiplicity="0..1" />
+    <End Role="tbTinNhan" Type="Self.tbTinNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKhachHang">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbTinNhan">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbTinNhan__mashi__6477ECF3">
+    <End Role="tbShipper" Type="Self.tbShipper" Multiplicity="0..1" />
+    <End Role="tbTinNhan" Type="Self.tbTinNhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbShipper">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbTinNhan">
+        <PropertyRef Name="mashipper" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbThongTi__useri__5165187F">
+    <End Role="tbKhachHang" Type="Self.tbKhachHang" Multiplicity="0..1" />
+    <End Role="tbThongTinDatHang" Type="Self.tbThongTinDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKhachHang">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="tbThongTinDatHang">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Func_TinhKC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="from" Type="geography" Mode="In" />
+    <Parameter Name="to" Type="geography" Mode="In" />
+  </Function>
+  <EntityContainer Name="dbFoodyModelStoreContainer">
+    <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbChiTietDonHang" EntityType="Self.tbChiTietDonHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDanhGia" EntityType="Self.tbDanhGia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDanhMuc" EntityType="Self.tbDanhMuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDonHang" EntityType="Self.tbDonHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbKhachHang" EntityType="Self.tbKhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbKhuyenMai" EntityType="Self.tbKhuyenMai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbLoaiHinhThanhToan" EntityType="Self.tbLoaiHinhThanhToan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMonAn" EntityType="Self.tbMonAn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMonAnKhuyenMai" EntityType="Self.tbMonAnKhuyenMai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbQuanAn" EntityType="Self.tbQuanAn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbShipper" EntityType="Self.tbShipper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTinNhan" EntityType="Self.tbTinNhan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbThongTinDatHang" EntityType="Self.tbThongTinDatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUser" EntityType="Self.tbUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tbAdmin__userid__7E37BEF6" Association="Self.FK__tbAdmin__userid__7E37BEF6">
+      <End Role="tbUser" EntitySet="tbUser" />
+      <End Role="tbAdmin" EntitySet="tbAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbChiTiet__mamon__6FE99F9F" Association="Self.FK__tbChiTiet__mamon__6FE99F9F">
+      <End Role="tbMonAn" EntitySet="tbMonAn" />
+      <End Role="tbChiTietDonHang" EntitySet="tbChiTietDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbChiTietD__madh__6EF57B66" Association="Self.FK__tbChiTietD__madh__6EF57B66">
+      <End Role="tbDonHang" EntitySet="tbDonHang" />
+      <End Role="tbChiTietDonHang" EntitySet="tbChiTietDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDanhGia__mactd__7B5B524B" Association="Self.FK__tbDanhGia__mactd__7B5B524B">
+      <End Role="tbChiTietDonHang" EntitySet="tbChiTietDonHang" />
+      <End Role="tbDanhGia" EntitySet="tbDanhGia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDonHang__hinht__5BE2A6F2" Association="Self.FK__tbDonHang__hinht__5BE2A6F2">
+      <End Role="tbLoaiHinhThanhToan" EntitySet="tbLoaiHinhThanhToan" />
+      <End Role="tbDonHang" EntitySet="tbDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDonHang__makhu__5CD6CB2B" Association="Self.FK__tbDonHang__makhu__5CD6CB2B">
+      <End Role="tbKhuyenMai" EntitySet="tbKhuyenMai" />
+      <End Role="tbDonHang" EntitySet="tbDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDonHang__maqua__59063A47" Association="Self.FK__tbDonHang__maqua__59063A47">
+      <End Role="tbQuanAn" EntitySet="tbQuanAn" />
+      <End Role="tbDonHang" EntitySet="tbDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDonHang__mashi__5DCAEF64" Association="Self.FK__tbDonHang__mashi__5DCAEF64">
+      <End Role="tbShipper" EntitySet="tbShipper" />
+      <End Role="tbDonHang" EntitySet="tbDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbDonHang__mattd__59FA5E80" Association="Self.FK__tbDonHang__mattd__59FA5E80">
+      <End Role="tbThongTinDatHang" EntitySet="tbThongTinDatHang" />
+      <End Role="tbDonHang" EntitySet="tbDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbKhachHa__useri__4D94879B" Association="Self.FK__tbKhachHa__useri__4D94879B">
+      <End Role="tbUser" EntitySet="tbUser" />
+      <End Role="tbKhachHang" EntitySet="tbKhachHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMonAn__madanhm__6C190EBB" Association="Self.FK__tbMonAn__madanhm__6C190EBB">
+      <End Role="tbDanhMuc" EntitySet="tbDanhMuc" />
+      <End Role="tbMonAn" EntitySet="tbMonAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMonAn__maquana__6B24EA82" Association="Self.FK__tbMonAn__maquana__6B24EA82">
+      <End Role="tbQuanAn" EntitySet="tbQuanAn" />
+      <End Role="tbMonAn" EntitySet="tbMonAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMonAnKh__mamon__75A278F5" Association="Self.FK__tbMonAnKh__mamon__75A278F5">
+      <End Role="tbMonAn" EntitySet="tbMonAn" />
+      <End Role="tbMonAnKhuyenMai" EntitySet="tbMonAnKhuyenMai" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbMonAnKhu__makm__74AE54BC" Association="Self.FK__tbMonAnKhu__makm__74AE54BC">
+      <End Role="tbKhuyenMai" EntitySet="tbKhuyenMai" />
+      <End Role="tbMonAnKhuyenMai" EntitySet="tbMonAnKhuyenMai" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbQuanAn__userid__46E78A0C" Association="Self.FK__tbQuanAn__userid__46E78A0C">
+      <End Role="tbUser" EntitySet="tbUser" />
+      <End Role="tbQuanAn" EntitySet="tbQuanAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbShipper__useri__403A8C7D" Association="Self.FK__tbShipper__useri__403A8C7D">
+      <End Role="tbUser" EntitySet="tbUser" />
+      <End Role="tbShipper" EntitySet="tbShipper" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbTinNhan__madh__6383C8BA" Association="Self.FK__tbTinNhan__madh__6383C8BA">
+      <End Role="tbDonHang" EntitySet="tbDonHang" />
+      <End Role="tbTinNhan" EntitySet="tbTinNhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbTinNhan__makh__656C112C" Association="Self.FK__tbTinNhan__makh__656C112C">
+      <End Role="tbKhachHang" EntitySet="tbKhachHang" />
+      <End Role="tbTinNhan" EntitySet="tbTinNhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbTinNhan__mashi__6477ECF3" Association="Self.FK__tbTinNhan__mashi__6477ECF3">
+      <End Role="tbShipper" EntitySet="tbShipper" />
+      <End Role="tbTinNhan" EntitySet="tbTinNhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbThongTi__useri__5165187F" Association="Self.FK__tbThongTi__useri__5165187F">
+      <End Role="tbKhachHang" EntitySet="tbKhachHang" />
+      <End Role="tbThongTinDatHang" EntitySet="tbThongTinDatHang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
